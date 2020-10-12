@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Laravel</title>
+    <title>BlueBox | @yield('title','Home') </title>
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
@@ -17,15 +17,7 @@
 </head>
 
 <body>
-    <div class="container mt-5 text-center">
-        <div class="card" style="width: 100%;">
-            <div class="card-body">
-              <h5 class="card-title">{{$singlepost->id}}</h5>
-              <h5 class="card-title">{{$singlepost->title}}</h5>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-          </div>
-    </div>
+    @yield('content')
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
     </script>
