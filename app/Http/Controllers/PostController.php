@@ -41,13 +41,19 @@ class PostController extends Controller
     }
     public function update($post, Request $request)
     {
+        // dd($post);
         $singlepost = Post::findOrFail($post);
-        // $data = request()->all();
-
         $singlepost->update([
             'title' => $request->title,
             'description' => $request->desc,
         ]);
+        return redirect(route('posts.index'));
+    }
+    public function destroy($post, Request $request)
+    {
+        // dd($post);
+        $singlepost = Post::findOrFail($post);
+        $singlepost->delete();
         return redirect(route('posts.index'));
     }
 }
