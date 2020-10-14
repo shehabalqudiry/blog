@@ -1,7 +1,7 @@
 @extends('layouts.master')
 @section('content')
     <div class="container mt-5 py-3">
-        <form method="POST" action="{{ route('posts.update') }}">
+        <form method="POST" action="{{ route('posts.update',$singlepost->id) }}">
             @csrf
             @method('PUT')
             <div class="form-group">
@@ -10,7 +10,7 @@
             </div>
             <div class="form-group">
                 <label for="desc">Description</label>
-                <textarea name="desc" value="{{ $singlepost->description }}" class="form-control" id="desc"></textarea>
+                <textarea name="desc" class="form-control" id="desc">{{ $singlepost->description }}</textarea>
             </div>
             <button type="submit" class="btn btn-primary">Save</button>
         </form>
